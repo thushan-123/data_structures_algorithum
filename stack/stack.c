@@ -19,10 +19,22 @@ typedef struct node{
 Node *head = NULL;
 Node *tail = NULL;
 
-int push(int value){
+Node* push(int value){
 
     // first allocate the memory
     Node *new_node = (Node*)malloc(sizeof(Node));
+
+    if(new_node == NULL){
+        printf("\nmemory allocation fail\n");
+        exit(1);
+    }
+
+    if(head == NULL){
+        // add first element into stack
+        new_node->data = value;
+        new_node->next = NULL;
+        head = new_node;
+    }
 }
 
 bool isEmpty{
