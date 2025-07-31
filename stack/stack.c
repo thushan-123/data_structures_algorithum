@@ -16,7 +16,12 @@ typedef struc{
     int *next_node
 }   Node;
 
-Node *head;
+Node *head = NULL;
+Node *tail = NULL;
+
+int push(int value){
+    
+}
 
 bool isEmpty{
     return true;
