@@ -16,8 +16,17 @@ typedef struct node{
     struct node *next;
 }   Node;
 
-Node *head = NULL;
-Node *tail = NULL;
+typedef struct stack{
+    Node *head;
+} Stack;
+
+
+void stack(Stack *s){
+    s->head =NULL;
+}
+
+
+
 
 Node* push(int value){
 
@@ -46,8 +55,8 @@ int peek(){
 }
 
 
-
-
 int main(){
+    
+
     return 0;
 }
