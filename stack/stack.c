@@ -11,16 +11,18 @@
 // isEmpty -> returns stack emty or not
 
 // struct key word access . operator for variable , -> operator for pointor 
-typedef struc{
+typedef struct node{
     int data;
-    int *next_node
+    struct node *next;
 }   Node;
 
 Node *head = NULL;
 Node *tail = NULL;
 
 int push(int value){
-    
+
+    // first allocate the memory
+    Node *new_node = (Node*)malloc(sizeof(Node));
 }
 
 bool isEmpty{
