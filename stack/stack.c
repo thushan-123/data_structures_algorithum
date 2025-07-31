@@ -18,7 +18,9 @@ typedef struc{
 
 Node *head;
 
-
+bool isEmpty{
+    return true;
+}
 
 int peek(){
     return 0;
