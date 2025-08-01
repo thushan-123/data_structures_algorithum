@@ -10,14 +10,21 @@ struct node{
 // temp is use store address temperly
 // first we init the LinkedList
 
-// void linedList(){
+struct linkedlist{
+    struct node *head;
+    struct node *temp;
+    
+};
 
-// }
+void linedList(struct linkedlist *name){
+    name->head = NULL;
+    name->temp = NULL;
+}
 
-struct node *head,*temp;
 
 
-void add(int value){
+
+void add(struct linkedlist *lnklst,int value){
     struct node * newnode;
     newnode = (struct node *)malloc(sizeof(struct node));     // malloc is return void pointer -> type cast to 'struct node' data type
 
@@ -29,7 +36,8 @@ void add(int value){
 
     if(head == NULL){
         // add first element to linked list
-        head = temp = newnode;
+        lnklst->head = newnode;
+        lnklst->temp = newnode;
     }else{
         newnode ->next = temp;
         temp = newnode;
