@@ -39,8 +39,8 @@ void add(struct linkedlist *lnklst,int value){
         lnklst->head = newnode;
         lnklst->temp = newnode;
     }else{
-        newnode ->next = temp;
-        temp = newnode;
+        newnode ->next = lnklst->temp;
+        lnklst->temp = newnode;
     }
 }
 
