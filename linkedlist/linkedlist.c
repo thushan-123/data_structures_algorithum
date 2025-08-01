@@ -44,11 +44,11 @@ void add(struct linkedlist *lnklst,int value){
     }
 }
 
-void print(){
-    if(head == NULL){
+void print(struct linkedlist *lnklst){
+    if(lnklst->head == NULL){
         printf("No Elements In LinkedList");
     }else{
-        struct node * t = temp;
+        struct node * t = lnklst->temp;
         while(t != NULL){
             printf("| %d ",t->data);
             t = t->next;
