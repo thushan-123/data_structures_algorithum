@@ -4,7 +4,7 @@
 struct node{
     int data;
     struct node * next;
-}
+};
 
 // head pointer is pointing to first node in linkedList , it not changed
 // temp is use store address temperly
@@ -51,7 +51,11 @@ void print(){
 
 int main(){
 
+    add(10);
+    add(20);
+    add(30);
 
+    print();
 
 
     return 0;
