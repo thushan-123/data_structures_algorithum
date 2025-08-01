@@ -36,6 +36,18 @@ void add(int value){
     }
 }
 
+void print(){
+    if(head == NULL){
+        printf("No Elements In LinkedList");
+    }else{
+        struct node * t = temp;
+        while(t != NULL){
+            printf("| %d ",t->data);
+            t = t->next;
+        }
+    }
+}
+
 
 int main(){
 
