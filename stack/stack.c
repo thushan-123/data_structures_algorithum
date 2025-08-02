@@ -28,8 +28,19 @@ void initStack(struct stack*s){
     s->count = 0;
 }
 
+void push(struct stack *stk, int value){
+    struct node *new_node = (struct node *)malloc(sizeof(struct node));
+    new_node->data = value;
+    stk->count++;
 
-
+    if(stk->head == NULL){
+        stk->head = new_node;
+        stk->temp = new_node;
+    }else{
+        new_node->next = stk->temp;
+        stk->temp = new_node;
+    }
+}
 
 
 bool isEmpty(struct stack *s){
