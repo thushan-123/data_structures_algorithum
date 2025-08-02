@@ -55,6 +55,19 @@ int size(struct stack *s){
     return s->count;
 }
 
+int pop(struct stack *s){
+    if(s->head == NULL){
+        printf("No elements");
+        exit(1);
+    }else {
+        struct node* t = s->temp;
+        s->temp = s->temp->next;
+        int d = t->data;
+        free(t);
+        return d;
+    }
+}
+
 int main(){
     
 
