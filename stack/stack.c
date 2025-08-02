@@ -68,6 +68,17 @@ int pop(struct stack *s){
     }
 }
 
+void stack_print(struct stack *s){
+    if(s->head == NULL){
+        printf("Stack is Empty");
+    }else{
+        struct node *tmp = s->temp;
+        while(tmp->next != NULL){
+            printf("| %d ", tmp->data);
+            tmp = tmp->next;
+        }
+    }
+}
 int main(){
     
 
