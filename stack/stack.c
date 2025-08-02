@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 
 
 // STACK work LIFO (last in first out)
@@ -14,13 +16,13 @@
 struct node{
     int data;
     struct node *next;
-}
+};
 
 struct stack{
     struct node *head;
     struct node *temp;
     int count;
-}
+};
 
 void initStack(struct stack*s){
     s->head = NULL;
@@ -73,7 +75,7 @@ void stack_print(struct stack *s){
         printf("Stack is Empty");
     }else{
         struct node *tmp = s->temp;
-        while(tmp->next != NULL){
+        while(tmp != NULL){
             printf("| %d ", tmp->data);
             tmp = tmp->next;
         }
@@ -81,6 +83,16 @@ void stack_print(struct stack *s){
 }
 int main(){
     
+    struct stack stk;
+    initStack(&stk);
+    push(&stk,10);
+    push(&stk,20);
+    push(&stk,30);
+    stack_print(&stk);
+    pop(&stk);
+    printf("\n");
+    stack_print(&stk);
+
 
     return 0;
 }
