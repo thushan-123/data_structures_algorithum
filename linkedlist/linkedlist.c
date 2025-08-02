@@ -10,14 +10,21 @@ struct node{
 // temp is use store address temperly
 // first we init the LinkedList
 
-// void linedList(){
+struct linkedlist{
+    struct node *head;
+    struct node *temp;
+    
+};
 
-// }
+void linedList_init(struct linkedlist *name){
+    name->head = NULL;
+    name->temp = NULL;
+}
 
-struct node *head,*temp;
 
 
-void add(int value){
+
+void add(struct linkedlist *lnklst,int value){
     struct node * newnode;
     newnode = (struct node *)malloc(sizeof(struct node));     // malloc is return void pointer -> type cast to 'struct node' data type
 
@@ -27,20 +34,21 @@ void add(int value){
     }
     newnode->data = value;
 
-    if(head == NULL){
+    if(lnklst->head == NULL){
         // add first element to linked list
-        head = temp = newnode;
+        lnklst->head = newnode;
+        lnklst->temp = newnode;
     }else{
-        newnode ->next = temp;
-        temp = newnode;
+        newnode ->next = lnklst->temp;
+        lnklst->temp = newnode;
     }
 }
 
-void print(){
-    if(head == NULL){
-        printf("No Elements In LinkedList");
+void print(struct linkedlist *lnklst){
+    if(lnklst->head == NULL){
+        printf("\nNo Elements In LinkedList\n");
     }else{
-        struct node * t = temp;
+        struct node * t = lnklst->temp;
         while(t != NULL){
             printf("| %d ",t->data);
             t = t->next;
@@ -51,11 +59,23 @@ void print(){
 
 int main(){
 
-    add(10);
-    add(20);
-    add(30);
+    struct linkedlist l;
+    linedList_init(&l);
+    print(&l);
+    add(&l,1);
+    add(&l,2);
+    add(&l,3);
+    add(&l,4);
+    print(&l);
 
-    print();
+    struct linkedlist k;
+    linedList_init(&k);
+    print(&k);
+    add(&k,10);
+    add(&k,20);
+    add(&k,30);
+    add(&k,40);
+    print(&k);
 
 
     return 0;

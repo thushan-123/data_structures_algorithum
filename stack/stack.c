@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 
 
 // STACK work LIFO (last in first out)
@@ -11,52 +13,86 @@
 // isEmpty -> returns stack emty or not
 
 // struct key word access . operator for variable , -> operator for pointor 
-typedef struct node{
+struct node{
     int data;
     struct node *next;
-}   Node;
+};
 
-typedef struct stack{
-    Node *head;
-} Stack;
+struct stack{
+    struct node *head;
+    struct node *temp;
+    int count;
+};
 
+void initStack(struct stack*s){
+    s->head = NULL;
+    s->temp = NULL;
+    s->count = 0;
+}
 
-void stack(Stack *s){
-    s->head =NULL;
+void push(struct stack *stk, int value){
+    struct node *new_node = (struct node *)malloc(sizeof(struct node));
+    new_node->data = value;
+    stk->count++;
+
+    if(stk->head == NULL){
+        stk->head = new_node;
+        stk->temp = new_node;
+    }else{
+        new_node->next = stk->temp;
+        stk->temp = new_node;
+    }
 }
 
 
+bool isEmpty(struct stack *s){
+    if(s->head ==NULL){
+        return false;
+    }else{
+        return true;
+    }
+}
 
+int size(struct stack *s){
+    return s->count;
+}
 
-Node* push(int value){
-
-    // first allocate the memory
-    Node *new_node = (Node*)malloc(sizeof(Node));
-
-    if(new_node == NULL){
-        printf("\nmemory allocation fail\n");
+int pop(struct stack *s){
+    if(s->head == NULL){
+        printf("No elements");
         exit(1);
+    }else {
+        struct node* t = s->temp;
+        s->temp = s->temp->next;
+        int d = t->data;
+        free(t);
+        return d;
     }
+}
 
-    if(head == NULL){
-        // add first element into stack
-        new_node->data = value;
-        new_node->next = NULL;
-        head = new_node;
+void stack_print(struct stack *s){
+    if(s->head == NULL){
+        printf("Stack is Empty");
+    }else{
+        struct node *tmp = s->temp;
+        while(tmp != NULL){
+            printf("| %d ", tmp->data);
+            tmp = tmp->next;
+        }
     }
 }
-
-bool isEmpty{
-    return true;
-}
-
-int peek(){
-    return 0;
-}
-
-
 int main(){
     
+    struct stack stk;
+    initStack(&stk);
+    push(&stk,10);
+    push(&stk,20);
+    push(&stk,30);
+    stack_print(&stk);
+    pop(&stk);
+    printf("\n");
+    stack_print(&stk);
+
 
     return 0;
 }
