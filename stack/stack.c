@@ -11,49 +11,30 @@
 // isEmpty -> returns stack emty or not
 
 // struct key word access . operator for variable , -> operator for pointor 
-typedef struct node{
+struct node{
     int data;
     struct node *next;
-}   Node;
+}
 
-typedef struct stack{
-    Node *head;
-} Stack;
+struct stack{
+    struct node *head;
+    struct node *temp;
+    int count;
+}
 
-
-void stack(Stack *s){
-    s->head =NULL;
+void initStack(struct stack*s){
+    s->head = NULL;
+    s->temp = NULL;
+    s->count = 0;
 }
 
 
 
 
-Node* push(int value){
 
-    // first allocate the memory
-    Node *new_node = (Node*)malloc(sizeof(Node));
-
-    if(new_node == NULL){
-        printf("\nmemory allocation fail\n");
-        exit(1);
-    }
-
-    if(head == NULL){
-        // add first element into stack
-        new_node->data = value;
-        new_node->next = NULL;
-        head = new_node;
-    }
+bool isEmpty(struct stack *s){
+    if
 }
-
-bool isEmpty{
-    return true;
-}
-
-int peek(){
-    return 0;
-}
-
 
 int main(){
     
