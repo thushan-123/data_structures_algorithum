@@ -51,6 +51,10 @@ bool isEmpty(struct stack *s){
     }
 }
 
+int size(struct stack *s){
+    return s->count;
+}
+
 int main(){
     
 
