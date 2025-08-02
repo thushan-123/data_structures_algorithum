@@ -44,7 +44,11 @@ void push(struct stack *stk, int value){
 
 
 bool isEmpty(struct stack *s){
-    if
+    if(s->head ==NULL){
+        return false;
+    }else{
+        return true;
+    }
 }
 
 int main(){
