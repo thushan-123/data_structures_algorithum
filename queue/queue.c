@@ -64,23 +64,45 @@ int dequeue(struct queue *q){
     if(q->head == NULL){
         printf("queue is empty");
         exit(0);
+    }else if (q->tmp == q->head){
+        int k = q->tmp->data;
+        free(q->head);
+        return k;
     }else{
 
-        struct node* temp = q->tmp;
-        while(temp->next = NULL){
-            temp = temp->next;
+        struct node *tempory = q->tmp;
+        while(tempory->next != q->head){
+            tempory = tempory->next;
         }
-        temp ->next = NULL;
-        int k = q->head->data;
+        int k = tempory->next->data;
         free(q->head);
-        q->head = temp;
+        q->head = tempory;
         return k;
 
     }
 }
 
 
+
+
+
 int main(){
+
+    struct queue q;
+    init_queue(&q);
+    enqueue(&q,10);
+    enqueue(&q,20);
+    enqueue(&q,30);
+    int x = dequeue(&q);
+    printf("dequeue %d\n", x);
+    int y = dequeue(&q);
+    printf("dequeue %d\n", y);
+    int z = dequeue(&q);
+    printf("dequeue %d\n", z);
+
+    enqueue(&q,50);
+    enqueue(&q,60);
+    enqueue(&q,70);
 
 
     return 0;
