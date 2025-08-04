@@ -51,6 +51,15 @@ bool isEmpty(struct queue* q){
     }
 }
 
+int queue_size(struct queue* q){
+
+    if (q->head == NULL){
+        return q->count;
+    }else{
+        return q->count;
+    }
+}
+
 
 int main(){
 
