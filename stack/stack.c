@@ -64,6 +64,7 @@ int pop(struct stack *s){
     }else {
         struct node* t = s->temp;
         s->temp = s->temp->next;
+        s->count--;
         int d = t->data;
         free(t);
         return d;
@@ -92,6 +93,8 @@ int main(){
     pop(&stk);
     printf("\n");
     stack_print(&stk);
+
+    printf("stack size : %d",size(&stk));
 
 
     return 0;
