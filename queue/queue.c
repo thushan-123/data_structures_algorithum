@@ -15,6 +15,14 @@ struct queue
     
 };
 
+void init_queue(struct queue *q){
+    q->count = 0;
+    q->head = NULL;
+    q->tmp = NULL;
+}
+
+
+
 
 
 int main(){
