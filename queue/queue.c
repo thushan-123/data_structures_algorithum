@@ -67,6 +67,8 @@ int dequeue(struct queue *q){
     }else if (q->tmp == q->head){
         int k = q->tmp->data;
         free(q->head);
+        q->head = NULL;
+        q->tmp = NULL;
         return k;
     }else{
 
@@ -82,7 +84,17 @@ int dequeue(struct queue *q){
     }
 }
 
-
+void print_queue(struct queue* q){
+    if(q->head == NULL){
+        printf("no elements");
+    }else{
+        struct node *t = q->tmp;
+        while(t != NULL){
+            printf("| %d ",t->data);
+            t= t->next;
+        }
+    }
+}
 
 
 
@@ -93,6 +105,7 @@ int main(){
     enqueue(&q,10);
     enqueue(&q,20);
     enqueue(&q,30);
+    print_queue(&q);
     int x = dequeue(&q);
     printf("dequeue %d\n", x);
     int y = dequeue(&q);
@@ -103,6 +116,7 @@ int main(){
     enqueue(&q,50);
     enqueue(&q,60);
     enqueue(&q,70);
+    print_queue(&q);
 
 
     return 0;
