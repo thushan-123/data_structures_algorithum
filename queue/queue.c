@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 struct node {
     int data;
@@ -41,6 +42,14 @@ void enqueue(struct queue *q , int value){
     }
 }
 
+
+bool isEmpty(struct queue* q){
+    if(q->head ==NULL){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 
 int main(){
