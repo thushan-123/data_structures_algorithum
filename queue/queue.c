@@ -21,15 +21,24 @@ void init_queue(struct queue *q){
     q->tmp = NULL;
 }
 
-void add(struct queue *q , int value){
+void enqueue(struct queue *q , int value){
 
     struct node* new_node = (struct node*)malloc(sizeof(struct node));
     if(new_node == NULL){
         printf("memory allocation fail");
         exit(0);
     }
-    
+
     new_node->data = value;
+    q->count++;
+
+    if(q->head == NULL){
+        q->head = new_node;
+        q->tmp = new_node;
+    }else {
+        new_node->next = q->tmp;
+        q->tmp = new_node;
+    }
 }
 
 
