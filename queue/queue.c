@@ -60,6 +60,25 @@ int queue_size(struct queue* q){
     }
 }
 
+int dequeue(struct queue *q){
+    if(q->head == NULL){
+        printf("queue is empty");
+        exit(0);
+    }else{
+
+        struct node* temp = q->tmp;
+        while(temp->next = NULL){
+            temp = temp->next;
+        }
+        temp ->next = NULL;
+        int k = q->head->data;
+        free(q->head);
+        q->head = temp;
+        return k;
+
+    }
+}
+
 
 int main(){
 
