@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 struct node {
     int data;
@@ -12,6 +13,14 @@ struct stack{
     struct node *head;
 };
 
+
+bool isEmpty(struct stack *s){
+    if(s->head == NULL){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 
 
