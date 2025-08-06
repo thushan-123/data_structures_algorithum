@@ -22,6 +22,10 @@ bool isEmpty(struct stack *s){
     }
 }
 
+void init_stack(){
+    
+}
+
 
 
 int main(){
