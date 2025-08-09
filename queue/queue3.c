@@ -76,6 +76,13 @@ int size_q(struct queue *q){
     return q->count;
 }
 
+bool isEmpty(struct queue *q){
+    if(q->head == NULL){
+        return true;
+    }
+    return false;
+}
+
 
 
 
