@@ -40,6 +40,24 @@ void enqueue(struct queue *q, int value){
     }
 }
 
+int dequeue(struct queue *q ){
+    if(q->head == NULL){
+        printf("No Elements in Queue");
+        exit(0);
+    }else if(q->head == q->tail){
+        q->count--;
+        int x = q->head->data;
+        free(q->head);
+        return x;
+    }
+    struct node *t = q->head->next;
+    int k = q->head->data;
+    free(q->head);
+    q->head = t;
+    return k;
+
+}
+
 
 
 
