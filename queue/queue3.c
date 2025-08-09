@@ -3,6 +3,10 @@
 #include <stdbool.h>
 
 
+// Stack logic opposit  for creating queue
+// pros reduse the time comlexity
+// insert elment neax addr is null and previous elemnt addres change to ne elment addr
+
 struct node{
     int data;
     struct node *next;
