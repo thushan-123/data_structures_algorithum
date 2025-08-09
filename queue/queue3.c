@@ -20,7 +20,7 @@ void init_queue(struct queue *q){
     q->tail = NULL;
 }
 
-bool enqueue(struct queue *q, int value){
+void enqueue(struct queue *q, int value){
 
     struct node *new_node = (struct node*)malloc(sizeof(struct node));
 
@@ -36,8 +36,11 @@ bool enqueue(struct queue *q, int value){
         q->tail = new_node;
     }else {
         q->tail->next = new_node;
+        q->tail = new_node;
     }
 }
+
+
 
 
 
