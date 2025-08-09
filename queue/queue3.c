@@ -72,6 +72,10 @@ void print_queue(struct queue *q){
     }
 }
 
+int size_q(struct queue *q){
+    return q->count;
+}
+
 
 
 
@@ -82,7 +86,12 @@ int main(){
     init_queue(&q);
     enqueue(&q,10);
     enqueue(&q,20);
-    enqueue(&q,20);
+    enqueue(&q,30);
+    int x = dequeue(&q);
+    printf("%d \n", x);
+    int y = dequeue(&q);
+    printf("%d \n", y);
+    print_queue(&q);
     return 0;
 
 }
