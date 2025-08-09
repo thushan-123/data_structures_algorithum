@@ -52,10 +52,24 @@ int dequeue(struct queue *q ){
     }
     struct node *t = q->head->next;
     int k = q->head->data;
+    q->count--;
     free(q->head);
     q->head = t;
     return k;
 
+}
+
+void print_queue(struct queue *q){
+    if(q->head == NULL){
+        printf("No Elements in Queue");
+        exit(0);
+    }
+
+    struct node *itr = q->head;
+    while(itr != NULL){
+        printf("| %d", itr->data);
+        itr = itr->next;
+    }
 }
 
 
@@ -67,6 +81,7 @@ int main(){
     struct queue q;
     init_queue(&q);
     enqueue(&q,10);
+    enqueue(&q,20);
     enqueue(&q,20);
     return 0;
 
