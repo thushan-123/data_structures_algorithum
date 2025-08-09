@@ -14,6 +14,11 @@ struct queue{
     struct node temp;
 }
 
+void init_queue(struct queue *q){
+    q->count = 0;
+    q->head = NULL;
+    q->temp = NULL;
+}
 
 
 
