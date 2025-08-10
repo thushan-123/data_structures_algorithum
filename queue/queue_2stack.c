@@ -24,7 +24,26 @@ struct queue{
 
 // impemnt push method
 
+void push(struct stack* s, int value){
+    struct node *new_node = (struct node*)malloc(sizeof(struct node));
+    
 
+    if(new_node == NULL){
+        printf("Memory Allocation Fail");
+        
+    }
+    new_node->data = value;
+    s->count++;
+
+    if(s->head == NULL){
+        s->head = new_node;
+        s->temp = new_node;
+    }else{
+        new_node->next = s->temp;
+        s->temp = new_node;
+
+    }
+}
 
 
 
