@@ -14,6 +14,11 @@ struct stack{
 };
 
 
+struct queue{
+    struct node *stack1;
+    struct node * stack2;
+}
+
 bool isEmpty(struct stack *s){
     if(s->head == NULL){
         return true;
