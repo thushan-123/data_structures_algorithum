@@ -15,21 +15,16 @@ struct stack{
 
 
 struct queue{
-    struct node *stack1;
-    struct node * stack2;
+    struct stack *stack1;
+    struct stack * stack2;
 }
 
-bool isEmpty(struct stack *s){
-    if(s->head == NULL){
-        return true;
-    }else{
-        return false;
-    }
-}
 
-void init_stack(){
+
+void init_queue(struct queue* q){
     
 }
+
 
 
 
