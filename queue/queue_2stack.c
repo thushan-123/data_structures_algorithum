@@ -18,7 +18,7 @@ struct queue{
     int queue_count;
     struct stack *stack1;
     struct stack * stack2;
-}
+};
 
 // first create stack methods;
 
@@ -76,6 +76,13 @@ bool isEmpty(struct stack *s){
 
 
 void init_queue(struct queue* q){
+    q->stack1 = (struct stack*)malloc(sizeof(struct stack));
+    q->stack2 = (struct stack*)malloc(sizeof(struct stack));
+    
+    if(q->stack1 == NULL || q->stack2 == NULL){
+        printf("stack Memery allocation fail.");
+        exit(1);
+    }
     q->stack1->head = NULL;
     q->stack1->temp = NULL;
     q->stack1->count = 0;
@@ -112,6 +119,10 @@ int dequeue(struct queue* q){
 
 int main(){
 
-
+    struct queue q;
+    init_queue(&q);
+    enqueue(&q,10);
+    // enqueue(&q,20);
+    // enqueue(&q,30);
     return 0;
 }
