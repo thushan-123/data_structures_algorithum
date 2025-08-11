@@ -66,6 +66,13 @@ int pop(struct stack* s){
 
 }
 
+bool isEmpty(struct stack *s){
+    if(s->head == NULL){
+        return true;
+    }
+
+    return false;
+}
 
 
 void init_queue(struct queue* q){
