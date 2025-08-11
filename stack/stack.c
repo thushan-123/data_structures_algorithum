@@ -33,6 +33,7 @@ void initStack(struct stack*s){
 void push(struct stack *stk, int value){
     struct node *new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = value;
+    new_node->next = NULL;
     stk->count++;
 
     if(stk->head == NULL){

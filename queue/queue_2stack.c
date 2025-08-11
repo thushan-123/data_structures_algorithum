@@ -33,6 +33,7 @@ void push(struct stack* s, int value){
         
     }
     new_node->data = value;
+    new_node->next = NULL;
     s->count++;
 
     if(s->head == NULL){
