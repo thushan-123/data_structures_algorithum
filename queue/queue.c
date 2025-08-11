@@ -31,6 +31,7 @@ void enqueue(struct queue *q , int value){
     }
 
     new_node->data = value;
+    new_node->next = NULL     // prevent set garbage value
     q->count++;
 
     if(q->head == NULL){

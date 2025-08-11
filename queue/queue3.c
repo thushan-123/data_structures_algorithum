@@ -33,6 +33,7 @@ void enqueue(struct queue *q, int value){
         exit(1);
     }
     new_node->data = value;
+    new_node->next = NULL;
     q->count++;
 
     if(q->head == NULL){
