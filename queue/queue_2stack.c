@@ -122,7 +122,9 @@ int main(){
     struct queue q;
     init_queue(&q);
     enqueue(&q,10);
-    // enqueue(&q,20);
-    // enqueue(&q,30);
+    enqueue(&q,20);
+    enqueue(&q,30);
+    printf("%d \n",dequeue(&q));
+    printf("%d \n",dequeue(&q));
     return 0;
 }
