@@ -126,5 +126,6 @@ int main(){
     enqueue(&q,30);
     printf("%d \n",dequeue(&q));
     printf("%d \n",dequeue(&q));
+    
     return 0;
 }
