@@ -95,7 +95,17 @@ void enqueue(struct queue* q, int value){
 }
 
 int dequeue(struct queue* q){
-    
+    // check stack2 is empty or not
+    if(isEmpty(q->stack2)){
+        // all stack1 elemnts push in stack2
+        struct node* tp = q->stack1->temp;
+        while (tp != NULL){
+            push(q->stack2,tp->data);
+        }
+        return pop(q->stack2);
+    }else{
+        return pop(q->stack2);
+    }
 }
 
 
