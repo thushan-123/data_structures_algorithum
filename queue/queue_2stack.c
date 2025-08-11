@@ -105,10 +105,8 @@ int dequeue(struct queue* q){
     // check stack2 is empty or not
     if(isEmpty(q->stack2)){
         // all stack1 elemnts push in stack2
-        struct node* tp = q->stack1->temp;
-        while (tp != NULL){
-            push(q->stack2,tp->data);
-            tp = tp->next;
+        while (!isEmpty(q->stack1)){
+            push(q->stack2,pop(q->stack1));
         }
         return pop(q->stack2);
     }else{
