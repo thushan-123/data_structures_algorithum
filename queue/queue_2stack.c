@@ -88,6 +88,15 @@ void init_queue(struct queue* q){
 
 }
 
+void enqueue(struct queue* q, int value){
+    //push to the all elements in stack1
+
+    push(q->stack1,value);
+}
+
+int dequeue(struct queue* q){
+    
+}
 
 
 
