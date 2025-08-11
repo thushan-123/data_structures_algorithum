@@ -45,6 +45,27 @@ void push(struct stack* s, int value){
     }
 }
 
+int pop(struct stack* s){
+
+    if(s->head == NULL){
+        return -1;
+    }else if(s->head == s->temp){
+        int t = s->head->data;
+        free(s->head);
+        s->head = NULL;
+        s->temp = NULL;
+        s->count = 0;
+        return t;
+    }
+
+    struct node * tp = s->temp->next;
+    int v = s->temp->data;
+    free(s->temp);
+    s->temp = tp;
+    return v;
+
+}
+
 
 
 void init_queue(struct queue* q){
