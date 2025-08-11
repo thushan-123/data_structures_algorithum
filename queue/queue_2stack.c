@@ -108,6 +108,7 @@ int dequeue(struct queue* q){
         struct node* tp = q->stack1->temp;
         while (tp != NULL){
             push(q->stack2,tp->data);
+            tp = tp->next;
         }
         return pop(q->stack2);
     }else{
