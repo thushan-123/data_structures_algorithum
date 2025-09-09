@@ -17,13 +17,18 @@ char* concat_string(char *string1, char *string2){
         string3[len1+i] =string2[i];
     }
 
-    return string3;
+    return string3;   // return void pointer
 }
 
 
 
 int main() {
 
+    char string1[] = "hello";
+    char string2[] = "world";
+
+    char * s3 = concat_string(string1,string2);
+    printf("%s", s3);
 
     return 0;
 }
