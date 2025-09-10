@@ -35,6 +35,7 @@ int main() {
     printf(" compare %i \n", compare_string(s1,s2));
     printf(" compare %i \n", compare_string(s1,s3));
     printf(" compare %i \n", compare_string(s3,s2));
+   
 
     return 0;
 }
