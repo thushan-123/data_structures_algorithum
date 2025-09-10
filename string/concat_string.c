@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int length_string(char *str){
+    
+    int i =0;
+    for(int k=0; str[k] !='\0'; k++){
+        i++;
+    }
+    return i;
+}
+
 char* concat_string(char *string1, char *string2){
 
     int len1 = sizeof(string1)/sizeof(string1[0]);
