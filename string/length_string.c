@@ -6,6 +6,7 @@ int length_string(char *str){
     for(int k=0; str[k] !='\0'; k++){
         i++;
     }
+    return i;
 }
 
 
