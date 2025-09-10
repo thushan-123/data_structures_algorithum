@@ -17,6 +17,7 @@ char* concat_string(char *string1, char *string2){
         string3[len1+i] =string2[i];
     }
 
+    printf("%c", string3[0]);
     return string3;   // return void pointer
 }
 
