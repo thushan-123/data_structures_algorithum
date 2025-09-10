@@ -9,7 +9,7 @@ char* concat_string(char *string1, char *string2){
 
     char *string3=malloc(len1+len2-1);
 
-    for(int k=0; k != '\0'; k++){
+    for(int k=0; string1[k] != '\0'; k++){
         string3[k] = string1[k];
     }
 
