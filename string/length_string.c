@@ -3,7 +3,7 @@
 int length_string(char *str){
     
     int i =0;
-    for(int k=0; str[k] !='\0', k++){
+    for(int k=0; str[k] !='\0'; k++){
         i++;
     }
 }
@@ -11,6 +11,8 @@ int length_string(char *str){
 
 int main(){
 
+    char x[] = "hello";
+    printf("%i", length_string(x));
 
     return 0;
 }
