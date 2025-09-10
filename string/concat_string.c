@@ -38,6 +38,7 @@ int main() {
 
     char * s3 = concat_string(string1,string2);
     printf("%s", s3);
+    printf("\n%i", length_string(s3));
 
     return 0;
 }
