@@ -19,6 +19,12 @@ char *copy_string(char *string){
     }
 
     char *new_str = malloc(len);
+
+    for(int i=0; i< len; i++){
+        new_str[i] = string[i];
+    }
+
+    return new_str;
 }
 
 
