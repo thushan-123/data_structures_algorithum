@@ -11,6 +11,16 @@ int length_string(char * string){
     return k;
 }
 
+char *copy_string(char *string){
+    int len = length_string(string);
+
+    if(len <=0){
+        exit(1);
+    }
+
+    char *new_str = malloc(len);
+}
+
 
 int main() {
 
