@@ -4,7 +4,7 @@
 int length_string(char * string){
     int k = 0;
 
-    for (int i=0; string['\0']; i++){
+    for (int i=0; string[i] != '\0'; i++){
         k +=1;
     }
 
@@ -30,6 +30,8 @@ char *copy_string(char *string){
 
 int main() {
 
-
+    char str[] = "hello";
+    char *new_str = copy_string(str);
+    printf("%s", new_str);
     return 0;
 }
